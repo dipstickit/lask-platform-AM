@@ -96,10 +96,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "ecommerce-platform-angular-admin-panel:build:production"
+              "buildTarget": "lask-platform-admin:build:production"
             },
             "development": {
-              "browserTarget": "ecommerce-platform-angular-admin-panel:build:development"
+              "buildTarget": "lask-platform-admin:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -107,7 +107,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "ecommerce-platform-angular-admin-panel:build"
+            "buildTarget": "lask-platform-admin:build"
           }
         },
         "test": {
@@ -139,20 +139,17 @@
         "lint": {
           "builder": "@angular-eslint/builder:lint",
           "options": {
-            "lintFilePatterns": [
-              "src/**/*.ts",
-              "src/**/*.html"
-            ]
+            "lintFilePatterns": ["src/**/*.ts", "src/**/*.html"]
           }
         },
         "cypress-run": {
           "builder": "@cypress/schematic:cypress",
           "options": {
-            "devServerTarget": "ecommerce-platform-angular-admin-panel:serve"
+            "devServerTarget": "lask-platform-admin:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "ecommerce-platform-angular-admin-panel:serve:production"
+              "devServerTarget": "lask-platform-admin:serve:production"
             }
           }
         },
@@ -166,13 +163,13 @@
         "e2e": {
           "builder": "@cypress/schematic:cypress",
           "options": {
-            "devServerTarget": "ecommerce-platform-angular-admin-panel:serve",
+            "devServerTarget": "lask-platform-admin:serve",
             "watch": true,
             "headless": false
           },
           "configurations": {
             "production": {
-              "devServerTarget": "ecommerce-platform-angular-admin-panel:serve:production"
+              "devServerTarget": "lask-platform-admin:serve:production"
             }
           }
         }
@@ -180,10 +177,7 @@
     }
   },
   "cli": {
-    "schematicCollections": [
-      "@angular-eslint/schematics",
-      "@ngrx/schematics"
-    ],
+    "schematicCollections": ["@angular-eslint/schematics", "@ngrx/schematics"],
     "analytics": "a894ecc3-ee8b-44a2-b412-a5d1849dbfd5"
   }
 }
